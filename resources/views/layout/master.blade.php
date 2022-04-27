@@ -79,7 +79,7 @@
           <img src="{{asset('template/dist/img/AdminLTELogo.png')}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Gufran</a>
+          <a href="#" class="d-block">Nurul</a>
         </div>
       </div>
 

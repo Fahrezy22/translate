@@ -158,6 +158,17 @@
                     $('#translateIndo').val(data[0].indonesia);
                     $('#translateDaerah').val(data[0].daerah);
                     $('#translateJenis').val(data[0].type);
+                    var i = 0;
+                    var table = '<table class="table style="border: none"" id="hasil-serupa"><thead><tr><th>Indonesia</th><th>Ta,a</th><th>Jenis</th></tr></thead><tbody>';
+                    $.each(data[1], function(i, item) {
+                        table += ('<tr>');
+                        table += ('<td>' + item.indonesia + '</td>');
+                        table += ('<td>' + item.daerah + '</td>');
+                        table += ('<td>' + item.type + '</td>');
+                        table += ('</tr></tbody>');
+                    });
+                    table += '</table>';
+                    $(".anu").html(table);
                 },
             });
         });

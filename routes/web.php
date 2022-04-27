@@ -14,13 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('layout.master');
-});
-
 Route::resource('sentence', TranslateController::class )
 ->except('create', 'show', 'update', 'destroy');
 Route::post('sentence/update', [TranslateController::class, 'update'])->name('sentence.update');
 Route::post('sentence/destroy', [TranslateController::class, 'destroy'])->name('sentence.destroy');
-Route::get('translate',[TranslateController::class, 'kamus'])->name('translate');
+Route::get('/',[TranslateController::class, 'kamus'])->name('translate');
 Route::get('search', [TranslateController::class, 'search'])->name('sentence.search');
