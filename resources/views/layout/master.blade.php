@@ -47,7 +47,7 @@
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
-      
+
         <li class="nav-item dropdown">
             <a class="nav-link" data-toggle="dropdown" href="#">
               <i class="far fa-user-circle"></i>Logout
@@ -79,7 +79,7 @@
           <img src="{{asset('template/dist/img/AdminLTELogo.png')}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Nurul</a>
+          <a href="#" class="d-block">{{ Session::get('name') }}</a>
         </div>
       </div>
 
@@ -89,10 +89,10 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
               <li class="nav-item">
-                <a href="#" class="nav-link active">
-                  <i class="nav-icon fas fa-tachometer-alt"></i>
+                <a href="#" class="nav-link {{ request()->is('Sentence') ? 'active' : ''}}">
+                  <i class="nav-icon fas fa-book"></i>
                   <p>
-                    Dashboard
+                    Kata
                   </p>
                 </a>
               </li>
@@ -110,12 +110,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Dashboard</h1>
+            <h1 class="m-0">@yield('headd')</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Dashboard v1</li>
+              <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Home</a></li>
+              <li class="breadcrumb-item active">@yield('bredcum')</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->

@@ -2,6 +2,12 @@
 @section('title')
     Sentence
 @endsection
+@section('headd')
+    Kata
+@endsection
+@section('bredcum')
+    Kata
+@endsection
 @section('content')
 <div class="row">
     <div class="col-12">
@@ -9,6 +15,8 @@
             <div class="card-header">
                 <h3 class="card-title">Data Kalimat</h3>
                 <div class="float-right">
+                    <button class="btn btn-secondary" data-toggle="modal"
+                        data-target="#import-modal">Import</button>
                     <button class="btn btn-primary" data-toggle="modal"
                         data-target="#univ-modal">Tambah</button>
                 </div>
@@ -32,8 +40,7 @@
                         <tr>
                             <th>#</th>
                             <th>Indonesia</th>
-                            <th>Bugis</th>
-                            <th>Type</th>
+                            <th>Tajio</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -46,22 +53,20 @@
                                 <td>{{$no++}}</td>
                                     <td>{{$d->indonesia}}</td>
                                     <td>{{$d->daerah}}</td>
-                                    <td>{{$d->type}}</td>
                                 <td>
                                     <button type="button" id="btn_edit" data-id="{{$d->id}}"
                                         class="btn btn-warning"><i class="fa fa-edit"></i></button>
                                     <button type="button" id="btn_hapus" data-id="{{$d->id}}"
                                         class="btn btn-danger"><i class="fa fa-trash"></i></button>
                                 </td>
-                            </tr>  
-                        @endforeach      
+                            </tr>
+                        @endforeach
                     </tbody>
                     <tfoot>
                         <tr>
                             <th>#</th>
                             <th>Indonesia</th>
-                            <th>Bugis</th>
-                            <th>Type</th>
+                            <th>Tajio</th>
                             <th>Aksi</th>
                         </tr>
                     </tfoot>
@@ -77,7 +82,7 @@
             <div class="modal-header">
                 <h4 class="modal-title">Tambah Kata</h4>
             </div>
-            <form id="form-input" action="{{route('sentence.store')}}" method="POST">
+            <form id="form-input" action="{{route('Sentence.store')}}" method="POST">
                 @csrf
                 <div class="modal-body">
                     <div class="form-group row">
@@ -88,28 +93,43 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="control-label col-md-3 col-sm-3 ">Bugis</label>
+                        <label class="control-label col-md-3 col-sm-3 ">Tajio</label>
                         <div class="col-md-9 col-sm-9 ">
                             <input id="daerah" required name="daerah" type="text" class="form-control"
                                 placeholder="Isi disini..">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="control-label col-md-3 col-sm-3 ">Type</label>
-                        <div class="col-md-9 col-sm-9 ">
-                            <input type="hidden" name="id" id="id">
-                            <select id="type" name="type" class="form-control" required>
-                                <option selected disabled>Pilih</option>
-                                <option value="Kata Kerja">Kata Kerja</option>
-                                <option value="Kata Benda">Kata Benda</option>
-                                <option value="Kata Sifat">Kata Sifat</option>
-                            </select>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" id="batal" class="btn btn-danger" data-dismiss="modal">BATAL</button>
                     <button type="submit" id="simpan" class="btn btn-primary">SIMPAN</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div id="import-modal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Tambah Kata</h4>
+            </div>
+            <form id="form-input" action="{{route('Sentence.import')}}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <label class="control-label col-md-3 col-sm-3 ">File</label>
+                        <div class="col-md-9 col-sm-9 ">
+                            <input id="file" required name="file" type="file" class="form-control"
+                                placeholder="Pilih file excel">
+                                <span class="text text-danger">File hanya boleh excel</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="batal" class="btn btn-danger" data-dismiss="modal">BATAL</button>
+                    <button type="submit" id="simpan" class="btn btn-primary">Import</button>
                 </div>
             </form>
         </div>
@@ -132,27 +152,26 @@
                 $('body').on('click','#btn_edit', function()
         {
             let dataId = $(this).data('id');
-            $.get('sentence/'+ dataId + '/edit', function (data) {
+            $.get('Sentence/'+ dataId + '/edit', function (data) {
                 $('#univ-modal').modal('show');
                 $('#id').val(data.id);
                 $('#indonesia').val(data.indonesia);
                 $('#daerah').val(data.daerah);
-                $('#type').val(data.type);
-                $('#form-input').attr('action','{{route('sentence.update')}}')
+                $('#form-input').attr('action','{{route('Sentence.update')}}')
             })
         });
 
         $('body').on('click','#btn_hapus',function(){
             let dataId = $(this).data('id');
-            $.get('sentence/'+dataId+'/edit',function(data){
+            $.get('Sentence/'+dataId+'/edit',function(data){
                 $('.modal-body').html('');
                 $('.modal-body').append(
-                    `<h3>Apakah anda yakin ingin menghapus data <strong> Jenis Kasus `
+                    `<h3>Apakah anda yakin ingin menghapus kata <strong> `
                         + data.indonesia +`</strong> ?</h3>
                     <input type="hidden" name="id" value="`+ data.id +`">
                     `
                 );
-                $('#form-input').attr('action','{{route('sentence.destroy')}}')
+                $('#form-input').attr('action','{{route('Sentence.destroy')}}')
                 $('#univ-modal').modal('show');
                 $('#simpan').html('Hapus');
             });

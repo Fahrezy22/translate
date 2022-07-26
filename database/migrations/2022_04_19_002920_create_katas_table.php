@@ -17,7 +17,6 @@ class CreateKatasTable extends Migration
             $table->id();
             $table->string('indonesia');
             $table->string('daerah');
-            $table->string('type');
             $table->timestamps();
         });
     }

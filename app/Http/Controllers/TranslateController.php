@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Imports\KatasImport;
 use App\Models\Kata;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Maatwebsite\Excel\Facades\Excel;
 
 class TranslateController extends Controller
 {
@@ -58,5 +60,24 @@ class TranslateController extends Controller
         $data2 = DB::table('katas')->where([['indonesia', 'Like', "%$text%"], ['id', '!=', $result_id]])->get();
 
         return response()->json([$data, $data2]);
+    }
+
+    public function search2(Request $request)
+    {
+        $text = $request->indo;
+        // dd($text);
+        $result = DB::table('katas')->where('daerah', 'Like', "$text")->first();
+        $result_id = $result->id;
+        $data = DB::table('katas')->where('daerah', 'Like', "$text")->first();
+        $data2 = DB::table('katas')->where([['daerah', 'Like', "%$text%"], ['id', '!=', $result_id]])->get();
+
+        return response()->json([$data, $data2]);
+    }
+
+    public function import(Request $request)
+    {
+        Excel::import(new KatasImport, $request->file('file'));
+
+        return back();
     }
 }

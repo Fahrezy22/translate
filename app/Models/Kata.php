@@ -11,6 +11,5 @@ class Kata extends Model
     protected $fillable = [
         'indonesia',
         'daerah',
-        'type',
     ];
 }
