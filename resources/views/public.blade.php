@@ -1,178 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>KAMUS | Bugis - Indonesia</title>
-
-  <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="{{asset('template/plugins/fontawesome-free/css/all.min.css')}}">
-  <!-- Theme style -->
-  <!-- Select2 -->
-  <link rel="stylesheet" href="{{asset('template/plugins/select2/css/select2.min.css')}}">
-  <link rel="stylesheet" href="{{asset('template/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css')}}">
-  <link rel="stylesheet" href="{{asset('template/dist/css/adminlte.min.css')}}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{asset('template_user/assets/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('template_user/assets/fontawesome/css/all.min.css')}}">
+    <link rel="stylesheet" href="{{asset('template_user/assets/style.css')}}">
+    <script src="{{asset('template_user/assets/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{asset('template_user/assets/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('template_user/assets/js/bootstrap.js')}}"></script>
+    <title>Kamus</title>
 </head>
-<body class="hold-transition layout-top-nav">
-<div class="wrapper">
-
-  <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
-    <div class="container">
-      <a href="#" class="navbar-brand">
-        <img src="{{asset('template/dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">Translate</span>
-      </a>
-
-      <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-    </div>
-  </nav>
-  <!-- /.navbar -->
-
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0"> Kamus Bahasa Daerah Bugis</h1>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content-header -->
-
-    <!-- Main content -->
-    <div class="content">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-              <div class="d-flex justify-content-center">
-                  <div class="col-4">
-                      <div class="card">
-                          <div class="card-header">
-                              <h4>Masukan Kata </h4>
-                          </div>
-                          <div class="card-body">
-                              <div class="form-group">
-                                  <label for="indo" class="label-control"></label>
-                                  <select name="indo" id="indo" class="form-control select2">
-                                      <option value="" selected></option>
-                                      @foreach ($data as $d)
-                                          <option value="{{$d->indonesia}}">{{$d->indonesia}}</option>
-                                      @endforeach
-                                  </select>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
+<body>
+    <nav class="navbar navbar-light bg-light p-2" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);">
+        <div class="container-fluid">
+          <a class="navbar-brand" style="font-size: 20pt;"><strong style="color: blue;">K</strong><strong style="color: red;">a</strong><strong style="color: yellow;">m</strong><strong style="color: blue;">u</strong><strong style="color: red;">s</strong><span style="font-size: 13pt;"> translate</span></a>
+          <form class="d-flex">
+            <button class="btn btn-outline-primary" type="submit"><i class="fa-solid fa-bars"></i></button>
+          </form>
+        </div>
+      </nav>
+      <div class="col-12 mt-4">
+        <marquee scrolldelay="100"><h3>Ayo Lestarikan Bahasa Tajio</h3></marquee>
       </div>
-      <div class="row">
-          <div class="col-12">
-              <div class="card">
-                  <div class="card-header">
-                      <h4>Hasil terjemahan</h4>
-                  </div>
-                  <div class="card-body">
-                      <table class="table" style="border: none">
-                          <thead>
-                              <tr>
-                                  <th>Indonesia</th>
-                                  <th>Bugis</th>
-                                  <th>Jenis</th>
-                              </tr>
-                          </thead>
-                          <tbody>
-                              <tr>
-                                  <td ><input id="translateIndo" type="text" style="border: none" readonly></td>
-                                  <td ><input id="translateDaerah" type="text" style="border: none" readonly></td>
-                                  <td ><input id="translateJenis" type="text" style="border: none" readonly></td>
-                              </tr>
-                          </tbody>
-                      </table>
-                  </div>
+      <div class="container-fluid">
+        <a href="#" id="change"><strong id="tittle-translate">Tajio - indonesia</strong></a>
+          <form action="" method="" class="mt-3">
+              <div class="d-flex justify-content-between">
+                    <div class="form-group col-sm-6">
+                        <label for="" id="indo-label">Bahasa Indonesia</label>
+                        <textarea style="border: none; font-size: 15pt;" name="indo" id="indo" rows="9" class="form-control" placeholder="Masukan kalimat"></textarea>
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <label for="" id="daerah-label">Bahasa Tajio</label>
+                        <textarea style="border: none; background-color: whitesmoke; font-size: 15pt;" name="" id="hasil" rows="9" class="form-control"></textarea>
+                    </div>
               </div>
+          </form>
+                {{-- <div class="tab mt-4">
+                    <button class="tablinks" onclick="openCity(event, 'history')" id="defaultOpen"><b>History</b></button>
+                    <button class="tablinks" onclick="openCity(event, 'solved')"><b>Solved</b></button>
+                </div>
+
+                <div id="history" class="tabcontent mt-3">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card" id="square">
+                                <div class="card-body">
+                                    <h4>Result</h4><hr>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas sequi adipisci officia, nemo dolor suscipit inventore maxime cumque quas provident obcaecati quaerat doloremque omnis fugiat ducimus asperiores, veniam culpa sunt.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card" id="square">
+                                <div class="card-body">
+                                    <h4>Result</h4><hr>
+                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel, incidunt? Doloremque recusandae minima cupiditate error est ipsum exercitationem veritatis laboriosam, amet atque repudiandae totam voluptatum cum quae, nostrum porro repellat.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card" id="square">
+                                <div class="card-body">
+                                    <h4>Result</h4><hr>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad vel nam atque id nostrum quia libero, sunt, velit repellat quas repellendus aliquid facere sed veniam, vero provident? Recusandae, blanditiis reiciendis.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="solved" class="tabcontent mt-3">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card" id="square">
+                                <div class="card-body">
+                                    <h4>Result</h4><hr>
+                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel, incidunt? Doloremque recusandae minima cupiditate error est ipsum exercitationem veritatis laboriosam, amet atque repudiandae totam voluptatum cum quae, nostrum porro repellat.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card" id="square">
+                                <div class="card-body">
+                                    <h4>Result</h4><hr>
+                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel, incidunt? Doloremque recusandae minima cupiditate error est ipsum exercitationem veritatis laboriosam, amet atque repudiandae totam voluptatum cum quae, nostrum porro repellat.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> --}}
           </div>
-      </div>
-        <!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
+        <footer class="mt-5">
+            <i>Created by Yoru-Team 2022</i>
+        </footer>
 
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-  </aside>
-  <!-- /.control-sidebar -->
-  
-  <!-- Main Footer -->
-  <footer class="main-footer">
-    <!-- To the right -->
-    <div class="float-right d-none d-sm-inline">
-      Anything you want
-    </div>
-    <!-- Default to the left -->
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
-  </footer>
-</div>
-<!-- ./wrapper -->
+        <script src="{{asset('template/plugins/jquery/jquery.min.js')}}"></script>
+        <script>
+            function openCity(evt, cityName) {
+              var i, tabcontent, tablinks;
+              tabcontent = document.getElementsByClassName("tabcontent");
+              for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+              }
+              tablinks = document.getElementsByClassName("tablinks");
+              for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+              }
+              document.getElementById(cityName).style.display = "block";
+              evt.currentTarget.className += " active";
+            }
 
-<!-- REQUIRED SCRIPTS -->
+            // Get the element with id="defaultOpen" and click on it
+            document.getElementById("defaultOpen").click();
+            </script>
 
-<!-- jQuery -->
-<script src="{{asset('template/plugins/jquery/jquery.min.js')}}"></script>
-<!-- Bootstrap 4 -->
-<script src="{{asset('template/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-<!-- AdminLTE App -->
-<script src="{{asset('template/dist/js/adminlte.min.js')}}"></script>
-<script src="{{asset('template/plugins/select2/js/select2.full.min.js')}}"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="{{asset('template/dist/js/demo.js')}}"></script>
+        <script src="{{asset('template/dist/js/demo.js')}}"></script>
 
-<script>
-  $(function () {
-    
-    $('#indo').select2()
-  })
-  $(document).ready(function() {
-        $("#indo").change(function () {
-            var indo = $('#indo').val();
-            $.ajax({
-                url: '{{route('sentence.search')}}',
-                data: {
-                    'indo': indo
-                },
-                method: 'GET',
-                dataType: 'json',
-                success: function (data) {
-                    $('#translateIndo').val(data[0].indonesia);
-                    $('#translateDaerah').val(data[0].daerah);
-                    $('#translateJenis').val(data[0].type);
-                    var i = 0;
-                    var table = '<table class="table style="border: none"" id="hasil-serupa"><thead><tr><th>Indonesia</th><th>Ta,a</th><th>Jenis</th></tr></thead><tbody>';
-                    $.each(data[1], function(i, item) {
-                        table += ('<tr>');
-                        table += ('<td>' + item.indonesia + '</td>');
-                        table += ('<td>' + item.daerah + '</td>');
-                        table += ('<td>' + item.type + '</td>');
-                        table += ('</tr></tbody>');
-                    });
-                    table += '</table>';
-                    $(".anu").html(table);
-                },
+        <script>
+          $(document).ready(function() {
+
+            $('body').on('click','#change', function(){
+                $('#indo-label').html('Bahasa Tajio');
+                $('#indo').attr('name','daerah');
+                $('#indo').val('');
+                $('#hasil').val('');
+                $('#indo').attr('id','daerah');
+                $('#daerah-label').html('Bahasa Indonesia');
+                $('#tittle-translate').html('Indonesia - Tajio');
+                $('#change').attr('id','reverse');
             });
-        });
-    });
-</script>
+
+            $('body').on('click','#reverse', function(){
+                $('#indo-label').html('Bahasa Indonesia');
+                $('#daerah').attr('id','indo');
+                $('#daerah').val('');
+                $('#hasil').val('');
+                $('#daerah').attr('name','daerah');
+                $('#daerah-label').html('Bahasa Tajio');
+                $('#tittle-translate').html('Tajio - Indonesia');
+                $('#reverse').attr('id','change');
+            });
+
+            $("body").on('keyup', '#indo' ,function () {
+                var indo = $('#indo').val();
+                $('#hasil').val('Sedang Mencari Data .....');
+                $.ajax({
+                    url: '{{route('Sentence.search')}}',
+                    data: {
+                        'indo': indo
+                    },
+                    method: 'GET',
+                    dataType: 'json',
+                    success: function (data) {
+                        $('#translateIndo').val(data[0].indonesia);
+                        $('#hasil').val(data[0].daerah);
+                    },
+                });
+            });
+
+            $('body').on('keyup','#daerah', function () {
+                var indo = $('#daerah').val();
+                console.log(indo);
+                $('#hasil').val('Sedang Mencari Data .....');
+                $.ajax({
+                    url: '{{route('Sentence.search2')}}',
+                    data: {
+                        'indo': indo
+                    },
+                    method: 'GET',
+                    dataType: 'json',
+                    success: function (data) {
+                        $('#daerah').val(data[0].daerah);
+                        $('#hasil').val(data[0].indonesia);
+                    },
+                });
+            });
+            });
+        </script>
 </body>
 </html>

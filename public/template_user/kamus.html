@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+    <title>Kamus</title>
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light p-2" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);">
+        <div class="container-fluid">
+          <a class="navbar-brand" style="font-size: 20pt;"><strong style="color: blue;">K</strong><strong style="color: red;">a</strong><strong style="color: yellow;">m</strong><strong style="color: blue;">u</strong><strong style="color: red;">s</strong><span style="font-size: 13pt;"> translate</span></a>
+          <form class="d-flex">
+            <button class="btn btn-outline-primary" type="submit"><i class="fa-solid fa-bars"></i></button>
+          </form>
+        </div>
+      </nav>
+      <div class="container-fluid">
+          <form action="" method="" class="mt-3">
+              <div class="d-flex justify-content-between">
+                    <div class="form-group col-sm-6">
+                        <label for="">Bahasa Indonesia</label>
+                        <textarea style="border: none; font-size: 15pt;" name="" id="" rows="9" class="form-control" placeholder="Masukan kalimat"></textarea>
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <label for="">Bahasa Daerah</label>
+                        <textarea style="border: none; background-color: whitesmoke; font-size: 15pt;" name="" id="" rows="9" class="form-control" placeholder="Masukan Kalimat"></textarea>
+                    </div>
+              </div>
+          </form>
+                <div class="tab mt-4">
+                    <button class="tablinks" onclick="openCity(event, 'history')" id="defaultOpen"><b>History</b></button>
+                    <button class="tablinks" onclick="openCity(event, 'solved')"><b>Solved</b></button>
+                </div>
+                
+                <div id="history" class="tabcontent mt-3">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card" id="square">
+                                <div class="card-body">
+                                    <h4>Result</h4><hr>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas sequi adipisci officia, nemo dolor suscipit inventore maxime cumque quas provident obcaecati quaerat doloremque omnis fugiat ducimus asperiores, veniam culpa sunt.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card" id="square">
+                                <div class="card-body">
+                                    <h4>Result</h4><hr>
+                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel, incidunt? Doloremque recusandae minima cupiditate error est ipsum exercitationem veritatis laboriosam, amet atque repudiandae totam voluptatum cum quae, nostrum porro repellat.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card" id="square">
+                                <div class="card-body">
+                                    <h4>Result</h4><hr>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad vel nam atque id nostrum quia libero, sunt, velit repellat quas repellendus aliquid facere sed veniam, vero provident? Recusandae, blanditiis reiciendis.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="solved" class="tabcontent mt-3">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card" id="square">
+                                <div class="card-body">
+                                    <h4>Result</h4><hr>
+                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel, incidunt? Doloremque recusandae minima cupiditate error est ipsum exercitationem veritatis laboriosam, amet atque repudiandae totam voluptatum cum quae, nostrum porro repellat.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card" id="square">
+                                <div class="card-body">
+                                    <h4>Result</h4><hr>
+                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel, incidunt? Doloremque recusandae minima cupiditate error est ipsum exercitationem veritatis laboriosam, amet atque repudiandae totam voluptatum cum quae, nostrum porro repellat.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+          </div>
+        <footer>
+            <i>Desain By Nazar 2022</i>
+        </footer>
+</body>
+<script>
+    function openCity(evt, cityName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+    
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+    </script>
+</html>
