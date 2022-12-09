@@ -34,6 +34,13 @@
                         </div>
                     </div>
                 @endif
+                @if($msg = Session::get('success'))
+                    <div class="text-center mt-3">
+                        <div class="alert bg-success">
+                            <p class="text-light">{{ $msg }}</p>
+                        </div>
+                    </div>
+                @endif
                 @if($errors->any())
                     <div class="text-center mt-3">
                         <div class="alert bg-danger">
@@ -46,7 +53,7 @@
                 <form action="{{ route('login') }}" method="post">
                     @csrf
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" name="username" placeholder="Username" required>
+                        <input type="email" class="form-control" name="email" placeholder="email" required>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-user"></span>

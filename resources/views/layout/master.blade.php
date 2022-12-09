@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Translate | @yield('title')</title>
+  <title>SIPSI | @yield('title')</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -68,20 +68,20 @@
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
       <img src="{{asset('template/dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">Translate</span>
+      <span class="brand-text font-weight-light">SIPSI</span>
     </a>
 
     <!-- Sidebar -->
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
-      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+      {{-- <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
           <img src="{{asset('template/dist/img/AdminLTELogo.png')}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
           <a href="#" class="d-block">{{ Session::get('name') }}</a>
         </div>
-      </div>
+      </div> --}}
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
@@ -89,10 +89,19 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
               <li class="nav-item">
-                <a href="#" class="nav-link {{ request()->is('Sentence') ? 'active' : ''}}">
-                  <i class="nav-icon fas fa-book"></i>
+                <a href="{{route('dashboard')}}" class="nav-link active {{ request()->is('Sentence') ? 'active' : ''}}">
+                  <i class="nav-icon fas fa-home"></i>
                   <p>
-                    Kata
+                    Daftar sengketa
+                  </p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="{{route('tesa')}}" class="nav-link {{ request()->is('Sentence') ? 'active' : ''}}">
+                  <i class="nav-icon fas fa-plus"></i>
+                  <p>
+                    Input sengketa
                   </p>
                 </a>
               </li>
