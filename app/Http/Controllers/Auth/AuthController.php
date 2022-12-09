@@ -15,9 +15,9 @@ class AuthController extends Controller
 
     public function login(Request $request) {
 
-        $credentials = request(['username', 'password']);
+        $credentials = request(['email', 'password']);
         $request->validate([
-             'username' => 'required|string',
+             'email' => 'required|email',
              'password' => 'required|string',
         ]
         );
@@ -25,7 +25,7 @@ class AuthController extends Controller
         if (Auth::attempt($credentials))
         {
             $request->session()->put('name', Auth::user()->name);
-            return redirect()->route('Sentence.index');
+            return redirect()->route('dashboard');
         }
         else{
             return redirect()->route('login')->with('error', 'Username atau password salah !' );

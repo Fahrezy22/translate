@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DashoardController;
+use App\Http\Controllers\ApperanceController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\TranslateController;
 use Illuminate\Support\Facades\Route;
@@ -16,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/Auth',  [AuthController::class, 'index'])->name('login');
-Route::post('/Auth',  [AuthController::class, 'login'])->name('login');
+Route::post('/Auth',  [AuthController::class, 'login'])->name('login_proses');
 
 Route::group([
     'middleware' => 'auth'
@@ -35,6 +36,9 @@ Route::group([
 
 });
 
-Route::get('/',[TranslateController::class, 'kamus'])->name('translate');
+Route::get('/',[ApperanceController::class, 'index'])->name('register');
+Route::post('/registration_proses',[ApperanceController::class, 'register_proses'])->name('register_proses');
+Route::get('/dashboard',[ApperanceController::class, 'dashboard'])->name('dashboard');
+Route::get('/tes',[ApperanceController::class, 'tes'])->name('tesa');
 Route::get('search', [TranslateController::class, 'search'])->name('Sentence.search');
 Route::get('search2', [TranslateController::class, 'search2'])->name('Sentence.search2');
