@@ -424,13 +424,15 @@
                                             <div class="form-group row">
                                                 <label for="" class="label-control">KTP,SIM,PASPOR,Atau Kartu Tanda
                                                     Pelajar</label>
-                                                <input type="file" class="form-control"><small class="text-danger">*max 2mb</small>
+                                                <input type="file" class="form-control"><small class="text-danger">*max
+                                                    2mb</small>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="" class="label-control">Akta pendirian badan hukum surat
                                                     keputusan pengangkatan pengurus, atau akta lain yang dianggap sah
                                                     (bagi pemohon badan hukum)</label>
-                                                <input type="file" class="form-control"><small class="text-danger">*max 2mb</small>
+                                                <input type="file" class="form-control"><small class="text-danger">*max
+                                                    2mb</small>
                                             </div>
                                         </div>
                                     </div>
@@ -440,18 +442,118 @@
                                         </div>
                                         <div class="card-body">
                                             <div class="form-group row">
-                                                <label for="" class="label-control">Surat permohonan atau formulir permohonan atau tanda bukti permohonan informasi
+                                                <label for="" class="label-control">Surat permohonan atau formulir
+                                                    permohonan atau tanda bukti permohonan informasi
                                                     Pelajar</label>
-                                                <input type="file" class="form-control"><small class="text-danger">*max 2mb</small>
+                                                <input type="file" class="form-control"><small class="text-danger">*max
+                                                    2mb</small>
                                             </div>
                                             <div class="form-group row">
-                                                <label for="" class="label-control">Surat pemberitahuan tertulis atas permohonan informasi</label>
-                                                <input type="file" class="form-control"><small class="text-danger">*max 2mb</small>
+                                                <label for="" class="label-control">Surat pemberitahuan tertulis atas
+                                                    permohonan informasi</label>
+                                                <input type="file" class="form-control"><small class="text-danger">*max
+                                                    2mb</small>
                                             </div>
                                             <div class="form-group row">
-                                                <label for="" class="label-control">Tanda bukti pengajuan permohonan informasi</label>
-                                                <input type="file" class="form-control"><small class="text-danger">*max 2mb</small>
+                                                <label for="" class="label-control">Tanda bukti pengajuan permohonan
+                                                    informasi</label>
+                                                <input type="file" class="form-control"><small class="text-danger">*max
+                                                    2mb</small>
                                             </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-secondary">
+                                        <div class="card-header">
+                                            <h6>B.5.3 Upload file tanda pengajuan keberatan</h6>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="form-group row">
+                                                <label for="" class="label-control">Surat tanggapan tertulis atas
+                                                    keberatan permohonan oleh atasan PPID</label>
+                                                <input type="file" class="form-control"><small class="text-danger">*max
+                                                    2mb</small>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="" class="label-control">surat pengajuan keberatan, dalam hal
+                                                    keberatan tidak direspon oleh atasan PPID dalam waktu 30
+                                                    hari</label>
+                                                <input type="file" class="form-control"><small class="text-danger">*max
+                                                    2mb</small>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="" class="label-control">Tanda bukti pengajuan
+                                                    keberatan</label>
+                                                <input type="file" class="form-control"><small class="text-danger">*max
+                                                    2mb</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-secondary">
+                                        <div class="card-header">
+                                            <h6>B.5.4 Upload file jawaban tertulis dari petugas informasi</h6>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="form-group row">
+                                                <label for="" class="label-control">Jawaban tertulis dari petugas
+                                                    informasi</label>
+                                                <input type="file" class="form-control"><small class="text-danger">*max
+                                                    2mb</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-secondary">
+                                        <div class="card-header">
+                                            <h6>B.5.5 Upload file surat kuasa</h6>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="form-group row">
+                                                <label for="" class="label-control">surat kuasa</label>
+                                                <input type="file" class="form-control"><small class="text-danger">*max
+                                                    2mb</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-secondary">
+                                        <div class="card-header">
+                                            <h6>B.5.5 Upload file dokumen pendukung lain</h6>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="form-group row">
+                                                <label for="" class="label-control">Dokumen pendukung lain</label>
+                                                <input type="file" class="form-control"><small class="text-danger">*max
+                                                    2mb</small>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="" class="label-control">Dokumen pendukung lain</label>
+                                                <input type="file" class="form-control"><small class="text-danger">*max
+                                                    2mb</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-secondary">
+                                        <div class="card-header"></div>
+                                        <div class="card-body">
+                                            <p>
+                                                Dengan ini saya menyatakan bahwa permasalahan yang saya ajukan kepada
+                                                komisi
+                                                informasi provinsi sulawesi tengah tidak sedang diproses atau belum
+                                                pernah
+                                                diputus oleh lembaga peradilan. atau belum terdapat kesepakatan yang
+                                                difasilitasi oleh lembaga media lainnya. Saya juga bersedia untuk
+                                                mengikuti
+                                                keseluruhan proses penyelesaian sengketa informasi pada komisi informasi
+                                                provinsi sulawesi tengah. Apabila pernyataan yang saya berikan diatas
+                                                tidak
+                                                sesuai dengan keadaan sesungguhnya. Maka komisi informasi provinsi
+                                                sulawesi
+                                                tengah berhak untuk menolak permohonan pengajuan penyelesaian sengketa
+                                                yang
+                                                saya ajukan atau menghentikan jalannya proses penyelesaian sengketa
+                                                informasi. Demikian surat permohonan ini dibuat dengan sadar dan tanpa
+                                                paksaan dari pihak manapun.
+                                            </p>
+                                            <button class="btn btn-primary float-right mt-5"> Ajukan Permohonan
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
